@@ -57,4 +57,45 @@ func main() {
 		}
 
 	}
+
+	//Ini adalah Array
+
+	iniArray := [...]string{
+		"A",
+		"B",
+		"C",
+		"D",
+	}
+
+	fmt.Println(iniArray)
+
+	for index, iniArray := range iniArray {
+		fmt.Println("Index : ", index, "Array : ", iniArray)
+	}
+
+	//Ini adalah Slice
+
+	var jenisHP []string
+
+	jenisHP = append(jenisHP, "Samsung")
+	fmt.Println(jenisHP)
+
+	jenisUlo := []string{"Nogo", " Cukrik"}
+	jenisUlo = append(jenisUlo)
+	fmt.Println(jenisUlo)
+
+	var jenisSepatu []string
+	jenisSepatu = append(jenisSepatu, "Nike")
+	jenisSepatu = append(jenisSepatu, "Adidas")
+	jenisSepatu = append(jenisSepatu, "Puma")
+	jenisSepatu = append(jenisSepatu, "Converse")
+	jenisSepatu = append(jenisSepatu, "Vans")
+	jenisSepatu = append(jenisSepatu, "New Balance")
+	jenisSepatu = append(jenisSepatu, "Reebok")
+	jenisSepatu = append(jenisSepatu, "Asics")
+
+	for index, jenisSepatu := range jenisSepatu {
+		fmt.Println("Index : ", index, "Jenis Sepatu : ", jenisSepatu)
+
+	}
 }
