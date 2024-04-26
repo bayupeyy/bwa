@@ -98,4 +98,77 @@ func main() {
 		fmt.Println("Index : ", index, "Jenis Sepatu : ", jenisSepatu)
 
 	}
+
+	//ini adalah Map
+
+	var myMap map[string]int
+	myMap = map[string]int{}
+
+	myMap["Ruby"] = 9
+	myMap["Jono"] = 10
+	myMap["Jono"] = 11
+
+	fmt.Println(myMap)
+	//untuk mendapatkan nilai dari salah satu
+	fmt.Println(myMap["Ruby"])
+
+	//Bentuk Map lain
+	sepatu := map[string]int{
+		"Nike":   10,
+		"Adidas": 11,
+		"Puma":   12,
+	}
+
+	for key, value := range sepatu {
+		fmt.Println(key, value)
+	}
+
+	//untuk menghapus data
+	//delete(sepatu, "Nike")
+
+	fmt.Println(sepatu)
+
+	fmt.Println("=================")
+	value, isAvailable := myMap["Jonioo"]
+
+	fmt.Println(value, isAvailable)
+
+	//Ini adalah Slice of map
+	dataSiswa := []map[string]string{
+		{"nama": "Jono", "kelas": "10"},
+		{"nama": "Karman", "kelas": "10"},
+		{"nama": "Cino", "kelas": "10"},
+	}
+
+	fmt.Println(dataSiswa)
+
+	for _, siswa := range dataSiswa {
+		fmt.Println(siswa["nama"])
+
+	}
+
+	//Latihan soal
+	//Hitung rata rata
+	scores := [8]int{100, 80, 75, 92, 70, 93, 88, 67}
+	var total int
+
+	for _, score := range scores {
+		total = total + score
+	}
+
+	length := len(scores)
+	average := float64(total) / float64(length)
+
+	fmt.Println("Rata ratanya adalah", average)
+
+	//Memasukkan Nilai yang =< 90
+
+	var goodScores []int
+	for _, score := range scores {
+		if score >= 90 {
+			goodScores = append(goodScores, score)
+		}
+
+		fmt.Println(goodScores)
+	}
 }
