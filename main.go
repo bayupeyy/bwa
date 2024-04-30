@@ -171,4 +171,19 @@ func main() {
 
 		fmt.Println(goodScores)
 	}
+
+	//Fungsi
+	myResult()
+
+	//Percobaan
+	for j := 0; j <= 10; j++ {
+		for k := 1; k <= j; k++ {
+			myResult()
+		}
+		fmt.Println()
+	}
+}
+
+func myResult() {
+	fmt.Println("Belajar Golang")
 }
