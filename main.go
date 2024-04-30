@@ -178,12 +178,42 @@ func main() {
 	//Percobaan
 	for j := 0; j <= 10; j++ {
 		for k := 1; k <= j; k++ {
-			myResult()
+			fmt.Print("s")
 		}
 		fmt.Println()
 	}
+
+	hasil("belajar")
+
+	sentence := printMyResult("Saya Sedang")
+	fmt.Println(sentence)
+
+	//Perkalian
+	perkalian := perkalian(9, 10)
+	fmt.Println(perkalian)
+
 }
 
 func myResult() {
 	fmt.Println("Belajar Golang")
+}
+
+//Menggunakan Paramater
+
+func hasil(iniHasil string) {
+	fmt.Println(iniHasil)
+}
+
+//Fungsi dengan nilai balik
+
+func printMyResult(sentence string) string {
+	newSetence := sentence + " Belajar Golang"
+	return newSetence
+}
+
+//Func Perkalian
+
+func perkalian(number int, numberTwo int) int {
+	result := number * numberTwo
+	return result
 }
