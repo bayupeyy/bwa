@@ -192,6 +192,18 @@ func main() {
 	perkalian := perkalian(9, 10)
 	fmt.Println(perkalian)
 
+	fmt.Println("==================================")
+	fmt.Println("===============Ini Adalah Multiple Return Function===================")
+
+	//Multiple Return Function
+
+	tambah, kurang, kali, bagi := calculator(10, 10, 10)
+
+	fmt.Println(tambah)
+	fmt.Println(kurang)
+	fmt.Println(kali)
+	fmt.Println(bagi)
+
 }
 
 func myResult() {
@@ -216,4 +228,15 @@ func printMyResult(sentence string) string {
 func perkalian(number int, numberTwo int) int {
 	result := number * numberTwo
 	return result
+}
+
+//Multiple Return Func
+
+func calculator(angka1, angka2, angka3 int) (int, int, int, float64) {
+	penambahan := angka1 + angka2 + angka3
+	pengurangan := angka1 - angka2 - angka3
+	kali := angka1 * angka2 * angka3
+	pembagian := float64(angka1) / float64(angka2) / float64(angka3)
+
+	return penambahan, pengurangan, kali, pembagian
 }
