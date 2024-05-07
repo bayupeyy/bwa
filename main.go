@@ -224,6 +224,37 @@ func main() {
 
 	fmt.Println(result)
 
+	//Belajar Struct
+	fmt.Println("==============Ini Struct=================")
+
+	user := User{}
+	user.Name = "Asep"
+	user.Age = 20
+	user.Address = "Semarang"
+	user.IsMarried = true
+
+	user2 := User{}
+	user2.Name = "Asepi"
+	user2.Age = 30
+	user2.Address = "Pati"
+	user2.IsMarried = false
+
+	fmt.Println(user)
+	fmt.Println(user2)
+	fmt.Println(user2.Address)
+
+	//Struct dengan Function
+	fmt.Println("==============Ini Struct dengan Function=================")
+
+	p := User{
+		Name:      "Asep",
+		Age:       20,
+		Address:   "Semarang",
+		IsMarried: true,
+	}
+
+	cetakPerson(p)
+
 }
 
 func myResult() {
@@ -290,4 +321,19 @@ func calculate(number, numberTwo int, operation string) (int, error) {
 
 	return result, errorResult
 
+}
+
+// Contoh Struct dengan Function
+func cetakPerson(p User) {
+	fmt.Println("Nama : ", p.Name)
+	fmt.Println("Umur : ", p.Age)
+	fmt.Println("Alamat : ", p.Address)
+	fmt.Println("Status : ", p.IsMarried)
+}
+
+type User struct {
+	Name      string
+	Age       int
+	Address   string
+	IsMarried bool
 }
