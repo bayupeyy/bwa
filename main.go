@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -204,6 +205,25 @@ func main() {
 	fmt.Println(kali)
 	fmt.Println(bagi)
 
+	fmt.Println("===============ini adalah Kuis=================")
+	//Kuis
+
+	skor := []int{10, 5, 9, 7, 3, 4, 5, 5, 1}
+	totalKu := sum(skor)
+
+	fmt.Println(totalKu)
+
+	fmt.Println("============Ini Kuis Kedua====================")
+	//Kuis Kedua
+	result, err := calculate(10, 2, "+x")
+
+	if err != nil {
+		fmt.Println("Terjadi Kesalahan")
+		fmt.Println(err.Error())
+	}
+
+	fmt.Println(result)
+
 }
 
 func myResult() {
@@ -239,4 +259,35 @@ func calculator(angka1, angka2, angka3 int) (int, int, int, float64) {
 	pembagian := float64(angka1) / float64(angka2) / float64(angka3)
 
 	return penambahan, pengurangan, kali, pembagian
+}
+
+//Kuis
+
+func sum(angka []int) int {
+	var totalKu int
+
+	for _, value := range angka {
+		totalKu = totalKu + value
+
+	}
+	return totalKu
+}
+
+func calculate(number, numberTwo int, operation string) (int, error) {
+	var result int
+	var errorResult error
+
+	switch operation {
+	case "+":
+		result = number + numberTwo
+	case "-":
+		result = number + numberTwo
+	case "*":
+		result = number + numberTwo
+	default:
+		errorResult = errors.New("Operator tidak ditemukan")
+	}
+
+	return result, errorResult
+
 }
